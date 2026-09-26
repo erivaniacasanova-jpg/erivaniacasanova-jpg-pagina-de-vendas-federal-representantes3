@@ -1,43 +1,26 @@
 {
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Link",
-          "value": "</llms.txt>; rel=\"alternate\"; type=\"text/markdown\""
-        }
-      ]
-    },
-    {
-      "source": "/robots.txt",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/plain; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/llms.txt",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/markdown; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/llms-full.txt",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/markdown; charset=utf-8"
-        }
-      ]
-    }
-  ],
   "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Link": "</llms.txt>; rel=\"alternate\"; type=\"text/markdown\""
+      },
+      "continue": true
+    },
+    {
+      "src": "^/robots\\.txt$",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/llms(-full)?\\.txt$",
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8"
+      },
+      "continue": true
+    },
     {
       "src": "^/(index\\.html)?$",
       "has": [
@@ -47,6 +30,9 @@
           "value": "(.*)text/markdown(.*)"
         }
       ],
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8"
+      },
       "dest": "/llms.txt"
     },
     {
