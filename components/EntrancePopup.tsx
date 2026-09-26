@@ -174,6 +174,9 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                   referrerPolicy="no-referrer"
                   className="rounded-2xl border border-purple-500/20"
                 />
+                <h1 className="text-sm sm:text-base font-bold text-slate-300 tracking-wide mt-3 text-center max-w-xl mx-auto">
+                  Federal Associados — Internet Móvel Vivo, TIM e Claro
+                </h1>
               </div>
 
               {/* CARDS DE BENEFÍCIOS */}
@@ -274,9 +277,9 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                   <p>Planos com benefícios exclusivos para você.</p>
                   <p>Internet móvel tanto para área urbana como rural.</p>
                   
-                  <p className="text-white font-black text-xl md:text-2xl pt-2">
+                  <h2 className="text-white font-black text-xl md:text-2xl pt-2">
                     Por que confiar na Federal Associados?
-                  </p>
+                  </h2>
 
                   {/* CARDS DE CREDIBILIDADE */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 pb-2 max-w-2xl mx-auto text-slate-100 font-bold">
@@ -292,7 +295,7 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                   </div>
 
                   <p className="pt-2 text-slate-300 font-medium">
-                    A Federal Associados possui parceria com as grandes operadoras de internet do Brasil.
+                    A Federal Associados possui parceria com as grandes operadoras de internet do Brasil: Vivo, TIM e Claro.
                   </p>
                 </div>
               </div>
@@ -306,7 +309,7 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                 <div className="flex justify-center py-2">
                   <img 
                     src="https://videos.suanetturbinada.com.br/federal3.jpg" 
-                    alt="Cobertura Operadoras" 
+                    alt="Cobertura com as operadoras Vivo, TIM e Claro" 
                     className="w-full max-w-2xl h-auto object-contain rounded-2xl border border-blue-500/20"
                     loading="lazy"
                     decoding="async"
@@ -336,9 +339,9 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                   </div>
 
                   {/* LEGENDA: Após se cadastrar */}
-                  <p className="text-lg md:text-2xl text-white font-bold leading-relaxed pt-2">
+                  <h2 className="text-lg md:text-2xl text-white font-bold leading-relaxed pt-2">
                     Após se cadastrar
-                  </p>
+                  </h2>
 
                   {/* IMAGEM FEDERALCHIPS.JPG */}
                   <div className="flex justify-center pt-2">
@@ -352,6 +355,10 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                       className="rounded-2xl border border-indigo-500/30"
                     />
                   </div>
+
+                  <p className="text-sm md:text-base text-slate-300 font-medium pt-1">
+                    Escolha entre chip físico ou eSIM, conforme a opção disponível para o seu aparelho.
+                  </p>
                 </div>
              </div>
           </div>
