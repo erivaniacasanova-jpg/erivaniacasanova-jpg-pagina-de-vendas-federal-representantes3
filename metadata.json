@@ -1,0 +1,8 @@
+{
+  "name": "Remix federal novo 0010",
+  "description": "Contrate seu plano de internet móvel Federal Associados com cobertura 4G/5G, ligações ilimitadas, sem fidelidade e sem consulta ao SPC/Serasa. Ativação via chip físico ou eSIM.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
