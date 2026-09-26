@@ -37,9 +37,9 @@
       ]
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
+      "src": "^/(index\\.html)?$",
       "has": [
         {
           "type": "header",
@@ -47,11 +47,14 @@
           "value": "(.*)text/markdown(.*)"
         }
       ],
-      "destination": "/llms.txt"
+      "dest": "/llms.txt"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
