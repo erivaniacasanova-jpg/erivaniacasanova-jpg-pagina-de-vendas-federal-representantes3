@@ -1,0 +1,32 @@
+# Federal Associados - Sua Net Turbinada
+
+> Internet móvel 4G/5G com cobertura em todo o Brasil (área urbana e rural), em parceria com as principais operadoras do país (Vivo, TIM e Claro), com opção de ativação via chip físico ou eSIM, sem fidelidade, sem consulta ao SPC/Serasa e sem comprovação de renda.
+
+## Informações Gerais
+- **Nome Comercial:** Federal Associados / Sua Net Turbinada
+- **Segmento:** Conectividade e telefonia móvel corporativa via associação
+- **Website Oficial:** https://suanetturbinada.com.br
+- **Adesão e Cadastro:** https://associarse.com.br
+- **Atendimento e Contato:** Atendimento humanizado via WhatsApp diretamente com os representantes oficiais
+- **Destaque em Exibição:** Destaque visual de 100GB de internet e ligações ilimitadas no banner de abertura da página
+
+## Características e Condições Comerciais Confirmadas
+- **Operadoras Parceiras:** Conexão realizada através da infraestrutura das operadoras Vivo, TIM e Claro.
+- **Cobertura:** Abrangência nacional para áreas urbanas e rurais em todo o Brasil.
+- **Formatos de Chip:**
+  - **Chip Físico:** Envio após a realização do cadastro.
+  - **eSIM:** Possibilidade de ativação via eSIM em aparelhos compatíveis.
+- **Condições de Adesão:**
+  - Sem fidelidade contratual (liberdade para o associado).
+  - Sem consulta aos órgãos de proteção ao crédito (SPC/Serasa).
+  - Sem necessidade de comprovação de renda.
+  - Aplicativos ilimitados inclusos sem descontar da franquia de dados.
+
+## Credibilidade e Trajetória
+- Mais de 14 anos de atuação no mercado de telecomunicações e associação.
+- Mais de 100 mil brasileiros conectados.
+- 5 troféus de reconhecimento institucional e setorial.
+
+## Documentação e Navegação
+- [Documentação Detalhada (llms-full.txt)](/llms-full.txt)
+- [Sitemap Oficial](/sitemap.xml)

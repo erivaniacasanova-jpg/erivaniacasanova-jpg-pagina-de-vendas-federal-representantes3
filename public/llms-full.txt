@@ -1,0 +1,52 @@
+# Federal Associados - Documentação Completa (LLMs Full)
+
+> Documentação integral e auditada para agentes de inteligência artificial, robôs e indexadores sobre a Federal Associados (Sua Net Turbinada), baseada exclusivamente nas informações ativas e confirmadas na experiência visual de produção.
+
+---
+
+## 1. Visão Geral da Entidade e Proposta de Valor
+- **Nome Comercial:** Federal Associados (Sua Net Turbinada)
+- **Atuação:** Associação que disponibiliza internet móvel corporativa para pessoas em todo o território nacional.
+- **Diferencial Comercial:** Conectividade móvel descomplicada, projetada para durar o mês inteiro, sem burocracia financeira e com atendimento via WhatsApp.
+- **Canal Oficial de Cadastro:** https://associarse.com.br
+- **Canal de Dúvidas e Atendimento:** WhatsApp direto com os representantes oficiais vinculados à página.
+
+---
+
+## 2. Condições Comerciais Confirmadas
+
+### Liberdade e Acessibilidade
+- **Sem Fidelidade:** Sem fidelidade.
+- **Sem Consulta ao SPC/Serasa:** Sem consulta ao SPC/Serasa.
+- **Sem Comprovação de Renda:** Não é exigido holerite, contracheque ou extrato bancário para se associar.
+
+### Conectividade e Recursos
+- **Aplicativos Ilimitados:** Uso de aplicativos essenciais sem descontar da franquia de dados contratada.
+- **Destaque Promocional em Exibição:** Banner principal de abertura apresenta oferta de 100GB de internet com ligações ilimitadas.
+- **Consulta de Planos e Valores:** As opções específicas de planos e valores vigentes são selecionadas e confirmadas diretamente no fluxo de adesão oficial em https://associarse.com.br.
+
+---
+
+## 3. Infraestrutura, Operadoras e Cobertura
+- **Redes Parceiras:** Os chips e planos operam integrados às redes das principais operadoras móveis do país: **Vivo**, **TIM** e **Claro**.
+- **Alcance Geográfico:** Cobertura em todo o território nacional, atendendo tanto **áreas urbanas** quanto **áreas rurais**.
+- **Modalidades de Entrega e Ativação:**
+  - **Chip Físico:** Enviado para o endereço do associado após a conclusão do cadastro na plataforma.
+  - **eSIM (Chip Virtual):** Possibilidade de ativação via eSIM em aparelhos compatíveis.
+
+---
+
+## 4. Indicadores de Credibilidade e Reconhecimento
+- **Tempo de Mercado:** Mais de 14 anos de atuação no Brasil.
+- **Base de Clientes:** Mais de 100 mil brasileiros conectados através dos serviços da associação.
+- **Reconhecimento:** 5 troféus de reconhecimento pela qualidade e atuação no setor.
+- **Prova Social:** Provas sociais ativas compostas por relatos de conversas reais de associados, fotografias de membros atendidos em diversos estados e depoimentos em vídeo.
+
+---
+
+## 5. Endpoints e Recursos Oficiais
+- **Página Principal:** https://suanetturbinada.com.br
+- **Robots.txt:** https://suanetturbinada.com.br/robots.txt
+- **Sitemap XML:** https://suanetturbinada.com.br/sitemap.xml
+- **Resumo LLMs:** https://suanetturbinada.com.br/llms.txt
+- **Cadastro Oficial:** https://associarse.com.br

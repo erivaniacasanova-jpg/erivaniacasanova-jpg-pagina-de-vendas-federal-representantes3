@@ -1,0 +1,33 @@
+# Robots.txt - Federal Associados / Sua Net Turbinada
+# Permite rastreamento completo das paginas e rotas publicas por motores de busca e agentes de IA
+
+User-agent: *
+Allow: /
+
+# Agentes de IA e Crawlers especificos
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap oficial
+Sitemap: https://suanetturbinada.com.br/sitemap.xml
