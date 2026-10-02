@@ -38,7 +38,7 @@ export const onRequestGet = async (
             "Content-Type": "text/markdown; charset=utf-8",
             "Cache-Control": "public, max-age=0, must-revalidate",
             "Link":
-              '</llms.txt>; rel="alternate"; type="text/markdown"
+              '</llms.txt>; rel="alternate"; type="text/markdown"'
           }
         });
       }
