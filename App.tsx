@@ -4,7 +4,7 @@ import { REPRESENTANTES, REPRESENTANTE_PADRAO, Representante } from './represent
 
 /**
  * App Component
- * Version 5.8.1 - Added /saibamais route for default representative.
+ * Version 5.8.0 - Added strict route validation for valid IDs vs Not Found.
  */
 const App: React.FC = () => {
   const [userName, setUserName] = useState('');
@@ -12,14 +12,14 @@ const App: React.FC = () => {
   const [naoEncontrado, setNaoEncontrado] = useState(false);
 
   // Rebuild trigger for total cache invalidation
-  const _forceRebuild = "v5.8.1_saibamais_routing_" + Date.now();
+  const _forceRebuild = "v5.8.0_strict_routing_" + Date.now();
 
   useEffect(() => {
     // 1. Pega o valor digitado após a barra na URL (remove barras extras e espaços)
     const pathName = window.location.pathname.replace(/^\/+/g, '').toLowerCase().trim();
 
-    if (!pathName || pathName === 'saibamais') {
-      // Se estiver na raiz (/) ou em /saibamais, usa o representante padrão (Francisco)
+    if (!pathName) {
+      // Se a URL estiver limpa (raiz), usa o representante padrão (Francisco)
       setRepresentante(REPRESENTANTE_PADRAO);
       setNaoEncontrado(false);
     } else if (REPRESENTANTES[pathName]) {

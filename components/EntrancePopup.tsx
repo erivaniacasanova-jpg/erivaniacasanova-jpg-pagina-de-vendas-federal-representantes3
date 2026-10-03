@@ -161,6 +161,24 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
           <div className="w-full pt-8 md:pt-12 pb-2 px-6">
             <div className="max-w-4xl mx-auto text-center">
               
+              {/* NOVA IMAGEM DE ABERTURA COM LEGENDA */}
+              <div className="mb-6">
+                <div className="flex justify-center">
+                  <img 
+                    src="https://videos.suanetturbinada.com.br/abertura%20da%20pagina.png" 
+                    alt="Abertura da página - Conheça uma nova forma de se conectar" 
+                    style={{ width: '100%', maxWidth: '700px', height: 'auto', display: 'block', margin: '0 auto' }} 
+                    loading="eager"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    className="rounded-2xl border border-purple-500/20"
+                  />
+                </div>
+                <p className="text-sm md:text-base text-slate-300 font-medium pt-3 text-center max-w-xl mx-auto">
+                  Você não precisa continuar passando por isso. Conheça uma nova forma de se conectar.
+                </p>
+              </div>
+
               {/* IMAGEM DO TÍTULO PRINCIPAL (Cloudflare R2) - Prioridade Máxima */}
               <div className="mb-6">
                 <img 
