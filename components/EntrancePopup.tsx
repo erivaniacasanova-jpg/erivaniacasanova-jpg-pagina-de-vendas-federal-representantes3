@@ -199,8 +199,12 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                   <img 
                     src="https://videos.suanetturbinada.com.br/abertura%20da%20pagina.png" 
                     alt="Abertura da página - Conheça uma nova forma de se conectar" 
-                    style={{ width: '100%', maxWidth: '700px', height: 'auto', display: 'block', margin: '0 auto' }} 
+                    width={1024}
+                    height={1536}
+                    style={{ width: '100%', maxWidth: '700px', height: 'auto', aspectRatio: '2 / 3', display: 'block', margin: '0 auto' }} 
                     loading="eager"
+                    fetchPriority="high"
+                    {...({ fetchpriority: 'high' } as React.ImgHTMLAttributes<HTMLImageElement>)}
                     decoding="async"
                     referrerPolicy="no-referrer"
                     className="rounded-2xl border border-purple-500/20"
