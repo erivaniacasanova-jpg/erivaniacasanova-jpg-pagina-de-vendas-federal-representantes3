@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { CheckCircle2, X } from 'lucide-react';
 import { WhatsAppButton } from './WhatsAppButton';
 import { VideoTestimonialsCarousel } from './VideoTestimonialsCarousel';
@@ -92,7 +92,39 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
   representante = REPRESENTANTE_PADRAO 
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const finalSectionRef = useRef<HTMLDivElement>(null);
   const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
+  const [showFloatingCta, setShowFloatingCta] = useState(false);
+  const [isAtFinalSection, setIsAtFinalSection] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      // 1. Oculto no topo, visível após primeira rolagem
+      if (scrollY > 40) {
+        setShowFloatingCta(true);
+      } else {
+        setShowFloatingCta(false);
+      }
+
+      // 2. Detecta se a viewport alcançou a seção final
+      if (finalSectionRef.current) {
+        const rect = finalSectionRef.current.getBoundingClientRect();
+        // Quando o topo da seção final entra no terço inferior da viewport ou o usuário chega perto do fim
+        const windowHeight = window.innerHeight;
+        if (rect.top <= windowHeight - 120) {
+          setIsAtFinalSection(true);
+        } else {
+          setIsAtFinalSection(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Pega o link de cadastro do representante atual preservando parâmetros da URL
   const getCadastroLink = () => {
@@ -256,18 +288,12 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                 </div>
                 
                 <div className="pt-2 pb-0">
-                  <a 
-                    href={getCadastroLink()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    id="btn-hero-cta-blue"
-                    className="w-full max-w-md bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-black text-xl md:text-2xl py-6 px-8 rounded-2xl shadow-lg border border-purple-400/30 flex items-center justify-center gap-3 tracking-wider mx-auto uppercase hover:opacity-95 transition-all cursor-pointer block text-center"
-                  >
-                    QUERO MEU PLANO
-                  </a>
+                  <p className="text-sm md:text-base text-slate-300 font-medium text-center max-w-xl mx-auto">
+                    Você encontra. Veja como é possível.
+                  </p>
                 </div>
 
-                {/* IMAGEM ABAIXO DE QUERO MEU PLANO: FEDERAL111.JPG */}
+                {/* IMAGEM FEDERAL111.JPG */}
                 <div className="flex justify-center pt-4 pb-2">
                   <img 
                     src="https://videos.suanetturbinada.com.br/federal111.jpg" 
@@ -418,10 +444,13 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
            </div>
         </div>
 
-        {/* BOTÃO FINAL DE CTA */}
-        <div className="w-full bg-[#060713] py-14 px-6 text-center border-t border-purple-900/30 relative">
+        {/* SEÇÃO FINAL */}
+        <div 
+          ref={finalSectionRef}
+          className="w-full bg-[#060713] py-14 px-6 text-center border-t border-purple-900/30 relative"
+        >
           <div className="max-w-3xl mx-auto">
-            <div className="mb-8 space-y-3">
+            <div className="space-y-3">
               <p className="text-2xl md:text-3xl text-white font-black leading-tight tracking-tight">
                 Pronto para economizar e navegar muito mais?
               </p>
@@ -429,17 +458,40 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                 Clique no botão abaixo para escolher o plano ideal para você.
               </p>
             </div>
-            
-            <a 
-              href={getCadastroLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full max-w-md bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-black text-xl md:text-2xl py-6 rounded-2xl shadow-lg border border-purple-400/30 flex items-center justify-center gap-4 tracking-wider mx-auto uppercase hover:opacity-95 transition-all cursor-pointer block text-center"
-            >
-              Quero internet turbinada
-            </a>
+
+            {/* BOTÃO DA SEÇÃO FINAL - APARECE QUANDO O VISITANTE CHEGA AO FINAL DA PÁGINA */}
+            <div className="pt-8 flex justify-center">
+              <a 
+                href={getCadastroLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                id="btn-final-cta-turbinada"
+                className={`bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-black text-sm sm:text-lg md:text-xl py-3.5 px-6 sm:py-4 sm:px-8 rounded-2xl shadow-2xl border border-purple-400/40 flex items-center justify-center gap-2 tracking-wider uppercase hover:opacity-95 active:scale-95 transition-all text-center whitespace-nowrap cursor-pointer select-none ${
+                  isAtFinalSection ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                }`}
+              >
+                QUERO INTERNET TURBINADA
+              </a>
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* CTA FLUTUANTE CENTRALIZADO NA VIEWPORT - APARECE APÓS PRIMEIRA ROLAGEM E OCULTA NA SEÇÃO FINAL */}
+      <div 
+        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-40 px-4 w-auto max-w-[calc(100vw-8rem)] sm:max-w-md transition-all duration-300 pointer-events-none ${
+          showFloatingCta && !isAtFinalSection ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+      >
+        <a 
+          href={getCadastroLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          id="btn-floating-cta-turbinada"
+          className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-black text-sm sm:text-lg md:text-xl py-3.5 px-6 sm:py-4 sm:px-8 rounded-2xl shadow-2xl border border-purple-400/40 flex items-center justify-center gap-2 tracking-wider uppercase hover:opacity-95 active:scale-95 transition-transform text-center whitespace-nowrap cursor-pointer select-none"
+        >
+          QUERO INTERNET TURBINADA
+        </a>
       </div>
 
       <WhatsAppButton representante={representante} />
