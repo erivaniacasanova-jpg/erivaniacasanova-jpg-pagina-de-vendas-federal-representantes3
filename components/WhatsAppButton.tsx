@@ -30,7 +30,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ representante: p
       href={urlWa}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 transition-transform hover:scale-110 flex items-center justify-center drop-shadow-2xl"
+      className="fixed bottom-24 sm:bottom-20 right-5 sm:right-6 z-50 transition-transform hover:scale-110 flex items-center justify-center drop-shadow-2xl"
       aria-label="Contato WhatsApp"
     >
       <svg className="w-16 h-16" viewBox="0 0 32 32" fill="none">

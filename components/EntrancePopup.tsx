@@ -479,8 +479,10 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
 
       {/* CTA FLUTUANTE CENTRALIZADO NA VIEWPORT - APARECE APÓS PRIMEIRA ROLAGEM E OCULTA NA SEÇÃO FINAL */}
       <div 
-        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-40 px-4 w-auto max-w-[calc(100vw-8rem)] sm:max-w-md transition-all duration-300 pointer-events-none ${
-          showFloatingCta && !isAtFinalSection ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
+        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-40 px-4 w-auto max-w-[calc(100vw-8rem)] sm:max-w-md transition-all duration-300 ${
+          showFloatingCta && !isAtFinalSection 
+            ? 'opacity-100 translate-y-0 pointer-events-auto' 
+            : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
       >
         <a 
@@ -488,7 +490,7 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           id="btn-floating-cta-turbinada"
-          className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-black text-sm sm:text-lg md:text-xl py-3.5 px-6 sm:py-4 sm:px-8 rounded-2xl shadow-2xl border border-purple-400/40 flex items-center justify-center gap-2 tracking-wider uppercase hover:opacity-95 active:scale-95 transition-transform text-center whitespace-nowrap cursor-pointer select-none"
+          className="pointer-events-auto block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-black text-sm sm:text-lg md:text-xl py-3.5 px-6 sm:py-4 sm:px-8 rounded-2xl shadow-2xl border border-purple-400/40 flex items-center justify-center gap-2 tracking-wider uppercase hover:opacity-95 active:scale-95 transition-transform text-center whitespace-nowrap cursor-pointer select-none"
         >
           QUERO INTERNET TURBINADA
         </a>
