@@ -288,8 +288,8 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                 </div>
                 
                 <div className="pt-2 pb-0">
-                  <p className="text-sm md:text-base text-slate-300 font-medium text-center max-w-xl mx-auto">
-                    Você encontra. Veja como é possível.
+                  <p className="text-base md:text-xl text-white font-bold text-center max-w-xl mx-auto">
+                    Você encontra aqui.
                   </p>
                 </div>
 
