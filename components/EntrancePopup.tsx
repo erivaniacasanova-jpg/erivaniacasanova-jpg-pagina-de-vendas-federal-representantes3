@@ -215,15 +215,15 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                 </p>
               </div>
 
-              {/* IMAGEM DO TÍTULO PRINCIPAL (Cloudflare R2) - Prioridade Máxima */}
+              {/* IMAGEM DO TÍTULO PRINCIPAL (Cloudflare R2) - Prioridade Normal (Segunda Dobra) */}
               <div className="mb-6">
                 <img 
                   src="https://videos.suanetturbinada.com.br/federal.jpeg" 
                   alt="Tenha 100GB de Internet e ligações ilimitadas" 
-                  style={{ width: '100%', maxWidth: '700px', height: 'auto', display: 'block', margin: '0 auto' }} 
+                  width={1024}
+                  height={1536}
+                  style={{ width: '100%', maxWidth: '700px', height: 'auto', aspectRatio: '2 / 3', display: 'block', margin: '0 auto' }} 
                   loading="eager"
-                  fetchPriority="high"
-                  {...({ fetchpriority: 'high' } as React.ImgHTMLAttributes<HTMLImageElement>)}
                   decoding="async"
                   referrerPolicy="no-referrer"
                   className="rounded-2xl border border-purple-500/20"

@@ -15,6 +15,7 @@ interface VideoCardProps {
   src: string;
   index: number;
   activeVideoIndex: number | null;
+  isNearSection: boolean;
   onSelectPlay: (index: number) => void;
   onVideoEnd: () => void;
   dragDistanceRef: React.MutableRefObject<number>;
@@ -24,6 +25,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
   src,
   index,
   activeVideoIndex,
+  isNearSection,
   onSelectPlay,
   onVideoEnd,
   dragDistanceRef,
@@ -31,6 +33,9 @@ const VideoCard: React.FC<VideoCardProps> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const isActive = activeVideoIndex === index;
   const [isPlaying, setIsPlaying] = useState(false);
+
+  // O vídeo ativo (selecionado para tocar ou tocando) ou o primeiro vídeo quando próximo da seção
+  const shouldPreload = isActive || (isNearSection && (activeVideoIndex === null ? index === 0 : activeVideoIndex === index));
 
   useEffect(() => {
     const video = videoRef.current;
@@ -116,7 +121,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
         controls={false}
         controlsList="nodownload nofullscreen noremoteplayback"
         disablePictureInPicture
-        preload="metadata"
+        preload={shouldPreload ? "metadata" : "none"}
         onEnded={handleEnded}
         crossOrigin="anonymous"
         className="w-full h-full object-cover pointer-events-none"
@@ -144,7 +149,41 @@ const VideoCard: React.FC<VideoCardProps> = ({
 
 export const VideoTestimonialsCarousel: React.FC = () => {
   const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null);
+  const [isNearSection, setIsNearSection] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // IntersectionObserver para detectar proximidade de aproximadamente 350px da viewport
+  useEffect(() => {
+    const sectionElement = sectionRef.current;
+    if (!sectionElement) return;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      setIsNearSection(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry && entry.isIntersecting) {
+          setIsNearSection(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '350px 0px 350px 0px',
+        threshold: 0,
+      }
+    );
+
+    observer.observe(sectionElement);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   // Controle de arrasto com mouse para Desktop
   const isMouseDownRef = useRef(false);
@@ -195,6 +234,7 @@ export const VideoTestimonialsCarousel: React.FC = () => {
   return (
     <div 
       id="video-testimonials-section" 
+      ref={sectionRef}
       className="w-full my-8 md:my-12"
     >
       <div className="max-w-4xl mx-auto text-center px-4 mb-6">
@@ -227,6 +267,7 @@ export const VideoTestimonialsCarousel: React.FC = () => {
             src={videoUrl}
             index={idx}
             activeVideoIndex={activeVideoIndex}
+            isNearSection={isNearSection}
             onSelectPlay={handleSelectPlay}
             onVideoEnd={handleVideoEnd}
             dragDistanceRef={dragDistanceRef}
