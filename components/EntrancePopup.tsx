@@ -197,7 +197,7 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
               <div className="mb-6">
                 <div className="flex justify-center">
                   <img 
-                    src="https://videos.suanetturbinada.com.br/abertura%20da%20pagina.png" 
+                    src="https://videos.suanetturbinada.com.br/abertura%20da%20pagina%20(1).webp" 
                     alt="Abertura da página - Conheça uma nova forma de se conectar" 
                     width={1024}
                     height={1536}
