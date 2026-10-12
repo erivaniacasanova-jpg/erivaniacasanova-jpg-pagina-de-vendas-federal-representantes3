@@ -13,7 +13,9 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ representante: p
       setRepresentante(propRepresentante);
       return;
     }
+
     const pathId = window.location.pathname.replace('/', '').trim();
+
     if (pathId && REPRESENTANTES[pathId]) {
       setRepresentante(REPRESENTANTES[pathId]);
     }
@@ -21,9 +23,20 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ representante: p
 
   const mensagemTexto = "Olá, estou vindo do site da Federal Associados. Você poderia me explicar como funciona essa internet?";
   const msg = encodeURIComponent(mensagemTexto);
-  
+
   const numeroLimpo = representante.whatsapp.replace(/\D/g, '');
-  const urlWa = `https://wa.me/${numeroLimpo}?text=${msg}`;
+
+  // Identifica exclusivamente a página principal.
+  // As rotas dos representantes continuam utilizando seus próprios números.
+  const ehPaginaPrincipal =
+    typeof window !== 'undefined' &&
+    window.location.pathname === '/';
+
+  // Página principal: link comercial oficial do WhatsApp Business.
+  // Representantes: mantém o funcionamento original.
+  const urlWa = ehPaginaPrincipal
+    ? `https://wa.me/message/A6LJG7LKESPPN1?text=${msg}`
+    : `https://wa.me/${numeroLimpo}?text=${msg}`;
 
   return (
     <a
@@ -36,7 +49,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ representante: p
       <svg className="w-16 h-16" viewBox="0 0 32 32" fill="none">
         {/* Fundo Verde Oficial */}
         <circle cx="16" cy="16" r="16" fill="#25D366" />
-        
+
         {/* Ícone do WhatsApp Vazado em Branco */}
         <path
           fillRule="evenodd"
