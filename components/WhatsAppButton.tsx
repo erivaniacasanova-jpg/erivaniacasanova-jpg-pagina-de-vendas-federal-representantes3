@@ -27,8 +27,9 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ representante: p
   // Mantém o número correspondente à página principal ou ao representante.
   const numeroLimpo = representante.whatsapp.replace(/\D/g, '');
 
-  // Link oficial por número, preservando a mensagem automática.
-  const urlWa = `https://wa.me/${numeroLimpo}?text=${msg}`;
+  // Utiliza o formato testado com sucesso no WhatsApp Business.
+  // Preserva a mensagem automática e o número de cada representante.
+  const urlWa = `https://api.whatsapp.com/send/?phone=${numeroLimpo}&text=${msg}&type=phone_number&app_absent=0`;
 
   return (
     <a
