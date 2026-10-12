@@ -24,19 +24,11 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ representante: p
   const mensagemTexto = "Olá, estou vindo do site da Federal Associados. Você poderia me explicar como funciona essa internet?";
   const msg = encodeURIComponent(mensagemTexto);
 
+  // Mantém o número correspondente à página principal ou ao representante.
   const numeroLimpo = representante.whatsapp.replace(/\D/g, '');
 
-  // Identifica exclusivamente a página principal.
-  // As rotas dos representantes continuam utilizando seus próprios números.
-  const ehPaginaPrincipal =
-    typeof window !== 'undefined' &&
-    window.location.pathname === '/';
-
-  // Página principal: link comercial oficial do WhatsApp Business.
-  // Representantes: mantém o funcionamento original.
-  const urlWa = ehPaginaPrincipal
-    ? `https://wa.me/message/A6LJG7LKESPPN1?text=${msg}`
-    : `https://wa.me/${numeroLimpo}?text=${msg}`;
+  // Link oficial por número, preservando a mensagem automática.
+  const urlWa = `https://wa.me/${numeroLimpo}?text=${msg}`;
 
   return (
     <a
