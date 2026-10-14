@@ -218,7 +218,7 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
               {/* IMAGEM DO TÍTULO PRINCIPAL (Cloudflare R2) - Prioridade Normal (Segunda Dobra) */}
               <div className="mb-6">
                 <img 
-                  src="https://videos.suanetturbinada.com.br/federal2.webp" 
+                  src="https://videos.suanetturbinada.com.br/40gb.webp" 
                   alt="Tenha 100GB de Internet e ligações ilimitadas" 
                   width={1024}
                   height={1536}
