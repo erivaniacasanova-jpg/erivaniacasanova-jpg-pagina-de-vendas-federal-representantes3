@@ -178,12 +178,30 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
       className="w-full bg-[#060713] text-slate-100 min-h-screen relative"
     >
       
-      {/* BARRA DE ANÚNCIO FIXA NO TOPO - 100% ESTÁTICA E LEVE */}
+      {/* BARRA DE ANÚNCIO FIXA NO TOPO COM LETREIRO CONTINUO */}
       <div 
         id="announcement-bar"
-        className="sticky top-0 z-40 w-full bg-[#b91c1c] text-white py-2.5 px-4 text-center font-bold text-sm sm:text-base tracking-wide flex items-center justify-center gap-2 shadow-md"
+        className="sticky top-0 z-40 w-full bg-[#b91c1c] text-white py-2.5 px-0 font-bold text-sm sm:text-base tracking-wide shadow-md overflow-hidden relative"
       >
-        <span>🔥 Oferta Relâmpago</span>
+        <div 
+          className="whitespace-nowrap inline-block animate-marquee"
+          style={{
+            display: 'inline-block',
+            animation: 'announcementMarquee 20s linear infinite',
+          }}
+        >
+          INTERNET E LIGAÇÕES ILIMITADAS VOCÊ ENCONTRA AQUI
+        </div>
+        <style>{`
+          @keyframes announcementMarquee {
+            0% {
+              transform: translateX(100vw);
+            }
+            100% {
+              transform: translateX(-100%);
+            }
+          }
+        `}</style>
       </div>
 
       <div className="w-full">
