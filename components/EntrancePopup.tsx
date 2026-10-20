@@ -187,7 +187,7 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
 
               {/* TÍTULO PRINCIPAL ACIMA DA PRIMEIRA IMAGEM */}
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white text-center tracking-tight leading-snug mb-6 max-w-3xl mx-auto">
-                INTERNET E LIGAÇÕES ILIMITADAS VOCÊ ENCONTRA AQUI
+                INTERNET E LIGAÇÕES ILIMITADAS PARA O SEU CELULAR VOCÊ ENCONTRA AQUI
               </h2>
               
               {/* NOVA IMAGEM DE ABERTURA COM LEGENDA */}
@@ -226,7 +226,7 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                   className="rounded-2xl border border-purple-500/20"
                 />
                 <h1 className="text-sm sm:text-base font-bold text-slate-300 tracking-wide mt-3 text-center max-w-xl mx-auto">
-                  Federal Associados — Internet Móvel Vivo, TIM e Claro
+                  Com a Federal Associados você tem Internet Móvel nas coberturas Vivo, TIM e Claro
                 </h1>
               </div>
 
