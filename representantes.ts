@@ -24,6 +24,12 @@ export const REPRESENTANTES: Record<string, Representante> = {
     whatsapp: "5524981472604",
     linkCadastro: "https://associarse.com.br/96016"
   },
+  "88389": {
+    id: "88389",
+    nome: "Wagner Cruz Vieira",
+    whatsapp: "5521996098857",
+    linkCadastro: "https://wagner.associarse.com.br"
+  },
   "191651": {
     id: "191651",
     nome: "Gilmar Goncalves De Paula",
