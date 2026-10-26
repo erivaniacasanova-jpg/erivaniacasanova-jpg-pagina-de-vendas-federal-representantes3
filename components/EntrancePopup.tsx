@@ -161,7 +161,7 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
   ];
 
   const chatItems = HERO_PHOTOS.map((src, idx) => ({ src, alt: `Chat ${idx + 1}` }));
-  const photoItems = [...TESTIMONIAL_PHOTOS, ...TESTIMONIAL_PHOTOS].map((src, idx) => ({
+  const photoItems = TESTIMONIAL_PHOTOS.map((src, idx) => ({
     src,
     alt: `Associado ${idx + 1}`,
   }));
