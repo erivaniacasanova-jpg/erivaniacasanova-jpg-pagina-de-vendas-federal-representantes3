@@ -35,7 +35,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ representante: p
   // Página principal: URL fixa, exatamente como foi testada.
   // Representantes: continuam com seus números dinâmicos.
   const urlWa = ehPaginaPrincipal
-    ? 'https://api.whatsapp.com/send/?phone=558481321396&text=Ol%C3%A1%2C%20estou%20vindo%20do%20site%20da%20Federal%20Associados.%20Voc%C3%AA%20poderia%20me%20explicar%20como%20funciona%20essa%20internet%3F&type=phone_number&app_absent=0'
+    ? 'https://api.whatsapp.com/send/?phone=558498410103&text=Ol%C3%A1%2C%20estou%20vindo%20do%20site%20da%20Federal%20Associados.%20Voc%C3%AA%20poderia%20me%20explicar%20como%20funciona%20essa%20internet%3F&type=phone_number&app_absent=0'
     : `https://api.whatsapp.com/send/?phone=${numeroLimpo}&text=${msg}&type=phone_number&app_absent=0`;
 
   return (
