@@ -185,6 +185,23 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
           <div className="w-full pt-8 md:pt-12 pb-2 px-6">
             <div className="max-w-4xl mx-auto text-center">
 
+              {/* LOGOTIPO OFICIAL */}
+              <div className="flex justify-center mb-5 md:mb-6">
+                <img 
+                  src="https://videos.suanetturbinada.com.br/Background.webp" 
+                  alt="Federal Associados" 
+                  width={858}
+                  height={226}
+                  style={{ width: '100%', maxWidth: '280px', height: 'auto', aspectRatio: '858 / 226', display: 'block', margin: '0 auto' }} 
+                  loading="eager"
+                  fetchPriority="high"
+                  {...({ fetchpriority: 'high' } as React.ImgHTMLAttributes<HTMLImageElement>)}
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="max-w-[220px] sm:max-w-[260px] md:max-w-[280px] h-auto object-contain"
+                />
+              </div>
+
               {/* TÍTULO PRINCIPAL ACIMA DA PRIMEIRA IMAGEM */}
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white text-center tracking-tight leading-snug mb-6 max-w-3xl mx-auto">
                 INTERNET E LIGAÇÕES ILIMITADAS PARA O SEU CELULAR VOCÊ ENCONTRA AQUI
@@ -200,8 +217,6 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                     height={1536}
                     style={{ width: '100%', maxWidth: '700px', height: 'auto', aspectRatio: '2 / 3', display: 'block', margin: '0 auto' }} 
                     loading="eager"
-                    fetchPriority="high"
-                    {...({ fetchpriority: 'high' } as React.ImgHTMLAttributes<HTMLImageElement>)}
                     decoding="async"
                     referrerPolicy="no-referrer"
                     className="rounded-2xl border border-purple-500/20"
