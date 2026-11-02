@@ -207,39 +207,23 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
                 INTERNET E LIGAÇÕES ILIMITADAS PARA O SEU CELULAR VOCÊ ENCONTRA AQUI
               </h2>
               
-              {/* NOVA IMAGEM DE ABERTURA COM LEGENDA */}
+              {/* IMAGEM PRINCIPAL DOS PLANOS */}
               <div className="mb-6">
                 <div className="flex justify-center">
                   <img 
-                    src="https://videos.suanetturbinada.com.br/abertura%20da%20pagina%20(1).webp" 
-                    alt="Abertura da página - Conheça uma nova forma de se conectar" 
+                    src="https://videos.suanetturbinada.com.br/federalplanos.webp" 
+                    alt="Planos Federal Associados - Internet Móvel Vivo, TIM e Claro" 
                     width={1024}
                     height={1536}
                     style={{ width: '100%', maxWidth: '700px', height: 'auto', aspectRatio: '2 / 3', display: 'block', margin: '0 auto' }} 
                     loading="eager"
+                    fetchPriority="high"
+                    {...({ fetchpriority: 'high' } as React.ImgHTMLAttributes<HTMLImageElement>)}
                     decoding="async"
                     referrerPolicy="no-referrer"
                     className="rounded-2xl border border-purple-500/20"
                   />
                 </div>
-                <p className="text-sm md:text-base text-slate-300 font-medium pt-3 text-center max-w-xl mx-auto">
-                  Você não precisa continuar passando por isso. Conheça uma nova forma de se conectar.
-                </p>
-              </div>
-
-              {/* IMAGEM DO TÍTULO PRINCIPAL (Cloudflare R2) - Prioridade Normal (Segunda Dobra) */}
-              <div className="mb-6">
-                <img 
-                  src="https://videos.suanetturbinada.com.br/40gb.webp" 
-                  alt="Tenha 100GB de Internet e ligações ilimitadas" 
-                  width={1024}
-                  height={1536}
-                  style={{ width: '100%', maxWidth: '700px', height: 'auto', aspectRatio: '2 / 3', display: 'block', margin: '0 auto' }} 
-                  loading="eager"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                  className="rounded-2xl border border-purple-500/20"
-                />
                 <h1 className="text-sm sm:text-base font-bold text-slate-300 tracking-wide mt-3 text-center max-w-xl mx-auto">
                   Com a Federal Associados você tem Internet Móvel nas coberturas Vivo, TIM e Claro
                 </h1>
