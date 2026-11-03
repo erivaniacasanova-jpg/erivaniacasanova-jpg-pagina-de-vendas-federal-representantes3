@@ -211,7 +211,7 @@ export const EntrancePopup: React.FC<EntrancePopupProps> = ({
               <div className="mb-6">
                 <div className="flex justify-center">
                   <img 
-                    src="https://videos.suanetturbinada.com.br/federalplanos.webp" 
+                    src="https://videos.suanetturbinada.com.br/planos.webp" 
                     alt="Planos Federal Associados - Internet Móvel Vivo, TIM e Claro" 
                     width={1024}
                     height={1536}
