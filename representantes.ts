@@ -54,6 +54,13 @@ export const REPRESENTANTES: Record<string, Representante> = {
     whatsapp: "5522998914547",
     linkCadastro: "https://associarse.com.br/191651"
   },
+
+  "135302": {
+      id: "135302",
+      nome: "Antonia Erivania Delmiro Jacinto",
+      whatsapp: "558498410187",
+      linkCadastro: "https://associarse.com.br/135302"
+    },
 };
 
 // Define o representante padrão que aparece quando acessam a raiz do site (ex: /)
